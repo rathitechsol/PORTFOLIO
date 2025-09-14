@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Engineer Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="scissor-overlay">
+        <svg id="scissor-svg" width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <polygon points="0,0 100,0 0,100" fill="#fff"/>
+        </svg>
+        <div id="scissor-icon">
+            ✂️
+        </div>
+    </div>
+
+    <header class="hero-section">
+        <div class="hero-content">
+            <h1>Daksh Rathi</h1>
+            <p>Engineer</p>
+            <a href="#contact" class="cta-button">Get in Touch</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="about" class="about-section">
+            <h2>About Me</h2>
+            <p>
+                As a passionate and dedicated engineer, I specialize in [Your Engineering Field, e.g., mechanical, software, civil] engineering. My expertise lies in [mention key skills, e.g., problem-solving, design, coding in Python/Java]. I'm driven by a desire to innovate and create solutions that make a tangible impact. This portfolio showcases some of my key projects and accomplishments.
+            </p>
+        </section>
+
+        <section id="projects" class="projects-section">
+            <h2>Projects</h2>
+            <div class="project-container">
+                <div class="project-card">
+                    <h3>Project Title 1</h3>
+                    <p>A brief description of your project, what you did, and the technologies used. 
+                    </p>
+                </div>
+                <div class="project-card">
+                    <h3>Project Title 2</h3>
+                    <p>A brief description of your project, what you did, and the technologies used.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Project Title 3</h3>
+                    <p>A brief description of your project, what you did, and the technologies used.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <h2>Contact</h2>
+            <p>Feel free to connect with me! You can reach me at:</p>
+            <ul>
+                <li><strong>Email:</strong> <a href="mailto:your.email@example.com">your.email@example.com</a></li>
+                <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></li>
+                <li><strong>GitHub:</strong> <a href="https://github.com/yourprofile" target="_blank">github.com/yourprofile</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Your Name. All Rights Reserved.</p>
+    </footer>
+    <script>
+    window.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+            document.getElementById('scissor-overlay').classList.add('hide');
+        }, 1200);
+        setTimeout(function() {
+            document.getElementById('scissor-overlay').style.display = 'none';
+        }, 2200);
+    });
+    </script>
+</body>
+</html>
