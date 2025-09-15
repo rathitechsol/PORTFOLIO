@@ -1,0 +1,327 @@
+:root {
+    --xp-blue: #0A246A;
+    --xp-dark-blue: #000080;
+    --xp-light-blue: #1A54E1;
+    --xp-gray: #ECE9D8;
+    --xp-dark-gray: #A4A4A4;
+    --xp-green: #3D9140;
+    --xp-red: #D20000;
+    --xp-yellow: #FDD100;
+    --xp-font: 'Press Start 2P', cursive;
+}
+
+/* Basic Page Styles */
+body {
+    font-family: 'Press Start 2P', cursive;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    color: black;
+    cursor: url('https://raw.githubusercontent.com/jdan/98.css/main/docs/cursors/winxp.cur'), auto;
+    background-color: var(--xp-blue);
+    background-image: url('wing.jpg');
+    background-size: cover;
+}
+
+/* Boot-up Screen */
+.boot-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    color: white;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 100;
+    transition: opacity 1s;
+}
+
+.boot-screen h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px #000;
+}
+
+.loading-bar-container {
+    width: 300px;
+    height: 20px;
+    border: 2px solid white;
+    padding: 2px;
+    box-shadow: inset 0 0 0 2px black;
+}
+
+.loading-bar {
+    height: 100%;
+    background-color: white;
+    width: 0;
+    transition: width 0.5s linear;
+}
+
+/* BSOD Screen */
+.bsod {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--xp-dark-blue);
+    color: white;
+    font-size: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 2rem;
+    z-index: 101;
+    font-family: monospace;
+}
+
+.bsod-text {
+    white-space: pre-wrap;
+    line-height: 1.5;
+    text-shadow: 1px 1px #000;
+}
+
+/* Desktop Layout */
+#desktop {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+/* Taskbar */
+#taskbar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 32px;
+    background: linear-gradient(to right, var(--xp-dark-blue), var(--xp-light-blue));
+    border-top: 2px solid var(--xp-dark-gray);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4px;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#start-button {
+    background: linear-gradient(to right, var(--xp-green), #3D7A40);
+    border: 2px outset var(--xp-dark-gray);
+    border-radius: 4px;
+    padding: 2px 8px;
+    height: 28px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+#start-button:active {
+    border-style: inset;
+}
+
+#taskbar-time {
+    color: white;
+    padding: 0 8px;
+    text-shadow: 1px 1px black;
+}
+
+/* Start Menu */
+#start-menu {
+    position: absolute;
+    bottom: 32px;
+    left: 0;
+    width: 200px;
+    background-color: var(--xp-gray);
+    border: 2px outset var(--xp-dark-gray);
+    display: none;
+    flex-direction: column;
+    padding: 8px;
+    box-shadow: 4px 4px 0 black;
+    z-index: 50;
+}
+
+.start-menu-item {
+    padding: 4px;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.start-menu-item:hover {
+    background-color: var(--xp-light-blue);
+    color: white;
+    border: 2px dotted white;
+}
+
+/* Desktop Icons */
+.desktop-icons {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.desktop-icon {
+    text-align: center;
+    width: 80px;
+    cursor: pointer;
+    color: white;
+    text-shadow: 1px 1px black;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.desktop-icon .icon-svg {
+    width: 32px;
+    height: 32px;
+    fill: white;
+    image-rendering: pixelated;
+}
+
+.desktop-icon img {
+    width: 32px;
+    height: 32px;
+    image-rendering: pixelated;
+}
+
+.desktop-icon-label {
+    font-size: 0.7rem;
+    margin-top: 4px;
+}
+
+/* Window Styles */
+.window {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    min-height: 300px;
+    background-color: var(--xp-gray);
+    border: 2px solid var(--xp-dark-gray);
+    box-shadow: 4px 4px 0 black;
+    display: none;
+    flex-direction: column;
+}
+
+.window-title-bar {
+    height: 24px;
+    background: linear-gradient(to right, var(--xp-blue), var(--xp-dark-blue));
+    color: white;
+    padding: 0 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: grab;
+    border-bottom: 2px solid var(--xp-dark-gray);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.window-title-bar:active {
+    cursor: grabbing;
+}
+
+.window-title {
+    font-size: 0.8rem;
+    text-shadow: 1px 1px black;
+}
+
+.window-controls {
+    display: flex;
+    gap: 2px;
+}
+
+.window-controls button {
+    width: 20px;
+    height: 20px;
+    background-color: var(--xp-gray);
+    border: 2px outset var(--xp-dark-gray);
+    padding: 0;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.window-controls button.close-btn {
+    background-color: var(--xp-red);
+    color: white;
+    font-weight: bold;
+}
+
+.window-content {
+    padding: 16px;
+    flex-grow: 1;
+    overflow-y: auto;
+    border-top: 2px solid white;
+}
+
+.window-content p {
+    line-height: 1.5;
+    font-size: 0.9rem;
+}
+
+/* Command Prompt */
+.cmd-window .window-content {
+    background-color: black;
+    color: #00FF00;
+    font-family: monospace;
+    overflow-y: auto;
+    border-top: none;
+    font-size: 0.9rem;
+}
+
+.cmd-output {
+    white-space: pre-wrap;
+    line-height: 1.2;
+}
+
+.cmd-input-line {
+    display: flex;
+}
+
+.cmd-input {
+    background-color: transparent;
+    border: none;
+    color: #00FF00;
+    font-family: monospace;
+    outline: none;
+    width: 100%;
+}
+
+/* Context Menu */
+#context-menu {
+    position: absolute;
+    background-color: var(--xp-gray);
+    border: 2px outset var(--xp-dark-gray);
+    padding: 2px;
+    display: none;
+    flex-direction: column;
+    z-index: 60;
+}
+
+.context-menu-item {
+    padding: 4px 12px;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.context-menu-item:hover {
+    background-color: var(--xp-light-blue);
+    color: white;
+}
